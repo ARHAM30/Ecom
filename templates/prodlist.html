@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+  {% block body %}
+
+
+
+
+  <div class="row m-0">
+  {% for i in prod %}
+
+<div class="card text-center col-12 col-md-6 col-lg-3 card border-0 " style="width: 18rem;">
+    <div CLASS="text-center m-0 p-0">
+     <img src="/media/{{ i.image }}" class="img-fluid card-img-top m-0 p-0" style="max-height: 250px;max-width: 250px" alt="...">
+    </div>
+  <div class="card-body">
+    <h3 class="card-title font-weight-normal">{{ i.title }}</h3>
+    <p class="card-text "><del class="text-muted m-1"><span>₹</span>{{ i.dicount_price }}</del>  <span>₹</span>{{ i.real_price }} </p>
+    <a href="/d/{{ i.slug }}" class="btn btn-primary">View more	&#8594</a>
+  </div>
+</div>
+
+
+      {% endfor %}
+  </div>
+
+
+
+
+  {% endblock %}
